@@ -1,2 +1,3 @@
-# CSC-221
+# Kyler Kershaw
+CSC-221
 Advanced Python
