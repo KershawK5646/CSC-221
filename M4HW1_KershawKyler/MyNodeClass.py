@@ -45,3 +45,35 @@ class Stack(object):
         while temp is not None:
             print(temp.data, end="->")
             temp = temp.next
+
+class Que(object):
+    def __init__(self):
+        # self.head = None
+        self.tail = None
+
+    # Push data to the back of the Que
+    def push(self, data):
+        if self.tail is None:
+            self.tail = Node(data)
+        else:
+            new_node = Node(data)
+            self.tail.prev = new_node
+            new_node.previous = self.tail
+            new_node.next = None
+            self.tail = new_node
+
+    # Pop data from the top of the stack
+    def pop(self):
+        if self.tail is None:
+            return None
+        else:
+            temp = self.tail.data
+            self.tail = self.tail.previous
+            return temp
+
+    def printQue(self):
+        print("Que List elements:\n")
+        temp = self.tail
+        while temp is not None:
+            print(temp.data, end="->")
+            temp = temp.previous

@@ -8,10 +8,6 @@ In a previous assignment, we used a list to simulate a queue (First In, First Ou
 Write a program that takes 5 string values from a user, adds (enqueues) them to a queue , and then removes (dequeues)
 them from the queue, printing them out in FIFO order.
 
-Question 4:
-Implement the same functionality as Question 3, but this time with a Queue class that uses Node objects to hold the
-internal structure of the stack. You will find it much easier for this problem to use the TwoWayNode object since a
-queue adds to the tail and removes from the head.
 '''
 
 import MyNodeClass as mnc
@@ -101,10 +97,28 @@ def question2():
     myStack.printStack()
 
 def question3():
-    x=3
+    question3Que = []
+    print(question3Que)
+    for count in range(5):
+        question3Que.append(getUserString())
+        print(question3Que)
+    for index in question3Que:
+        lastInLine = len(question3Que)-1
+        question3Que.pop(lastInLine)
+        print(question3Que)
+
 
 def question4():
-    x=4
+    myQue = mnc.Que()
+    for count in range(5):
+        myQue.push(getUserString())
+        myQue.printQue()
+
+    for count in range(5):
+        myQue.pop()
+        myQue.printQue()
+    # print empty stack
+        myQue.printQue()
 
 
 if __name__ == '__main__':
